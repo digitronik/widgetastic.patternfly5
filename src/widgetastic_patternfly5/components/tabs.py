@@ -51,7 +51,7 @@ class Tab(View):
         if not self.is_active():
             self.logger.info("Opening the tab %s", self.tab_name)
 
-            @wait_for_decorator(timeout=3)
+            @wait_for_decorator(timeout=5)
             def _click():
                 self.click()
                 return self.is_active()
